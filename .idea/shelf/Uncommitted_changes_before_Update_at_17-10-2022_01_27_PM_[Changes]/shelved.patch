@@ -1,0 +1,688 @@
+Index: app/src/main/res/layout/activity_main.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<androidx.constraintlayout.widget.ConstraintLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    tools:context=\".MainActivity\">\r\n\r\n    <TextView\r\n        android:layout_width=\"wrap_content\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:text=\"Hello World!\"\r\n        app:layout_constraintBottom_toBottomOf=\"parent\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toTopOf=\"parent\" />\r\n\r\n</androidx.constraintlayout.widget.ConstraintLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/activity_main.xml b/app/src/main/res/layout/activity_main.xml
+--- a/app/src/main/res/layout/activity_main.xml	(revision fdbe598496fc97d5e29e898b66ac6fd5547c1269)
++++ b/app/src/main/res/layout/activity_main.xml	(date 1665993345448)
+@@ -6,13 +6,97 @@
+     android:layout_height="match_parent"
+     tools:context=".MainActivity">
+ 
+-    <TextView
+-        android:layout_width="wrap_content"
+-        android:layout_height="wrap_content"
+-        android:text="Hello World!"
+-        app:layout_constraintBottom_toBottomOf="parent"
+-        app:layout_constraintEnd_toEndOf="parent"
+-        app:layout_constraintStart_toStartOf="parent"
+-        app:layout_constraintTop_toTopOf="parent" />
++    <LinearLayout
++        android:layout_width="match_parent"
++        android:layout_height="match_parent"
++        android:orientation="vertical"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintTop_toTopOf="parent"
++        app:layout_constraintBottom_toBottomOf="parent">
++        <androidx.core.widget.NestedScrollView
++            android:layout_width="match_parent"
++            android:layout_height="match_parent">
++            <com.google.android.material.card.MaterialCardView
++                android:layout_width="match_parent"
++                android:layout_height="wrap_content"
++                android:layout_marginTop="15dp"
++                android:layout_marginBottom="15dp"
++                android:layout_marginStart="10dp"
++                android:layout_marginEnd="10dp"
++                app:cardCornerRadius="7dp"
++                app:cardElevation="7dp">
++
++                <LinearLayout
++                    android:layout_width="match_parent"
++                    android:layout_height="match_parent"
++                    android:orientation="vertical">
++                    <ImageView
++                        android:id="@+id/alarmImages"
++                        android:layout_width="match_parent"
++                        android:layout_height="350dp" />
++                    <TextView
++                        android:layout_width="match_parent"
++                        android:layout_height="wrap_content"
++                        android:text="Create Alarm Time"
++                        android:textSize="17dp"
++                        android:textStyle="bold"
++                        android:layout_marginTop="10dp"
++                        android:layout_marginStart="10dp"/>
++                    <TextView
++                        android:layout_width="match_parent"
++                        android:layout_height="wrap_content"
++                        android:text="By Pressing buttons,Alarms can be created and cancelled"
++                        android:layout_marginTop="10dp"
++                        android:paddingEnd="10dp"
++                        android:layout_marginStart="10dp"/>
++                    <TextView
++                        android:layout_width="match_parent"
++                        android:layout_height="wrap_content"
++                        android:text="Check Current time by looking below real digital clock"
++                        android:layout_marginTop="10dp"
++                        android:paddingEnd="10dp"
++                        android:layout_marginStart="10dp"/>
++                    <ImageView
++                        android:id="@+id/heartImages"
++                        android:layout_width="27dp"
++                        android:layout_height="27dp"
++                        android:layout_marginTop="2dp"
++                        android:layout_marginEnd="25dp"
++                        android:layout_gravity="right" />
++                    <LinearLayout
++                        android:layout_width="wrap_content"
++                        android:layout_height="wrap_content"
++                        android:orientation="horizontal"
++                        android:layout_marginStart="10dp"
++                        android:layout_marginTop="15dp"
++                        android:layout_marginBottom="10dp">
++                        <com.google.android.material.button.MaterialButton
++                            android:layout_width="wrap_content"
++                            android:layout_height="wrap_content"
++                            app:cornerRadius="20dp"
++                            android:text="Create Alarm"
++                            android:textSize="12dp"
++                            android:layout_margin="10dp"
++                            app:icon="@drawable/ic_baseline_add_alarm_24"
++                            app:iconSize="20dp"
++                            android:backgroundTint="@color/teal_200"/>
++                        <com.google.android.material.button.MaterialButton
++                            android:layout_width="wrap_content"
++                            android:layout_height="wrap_content"
++                            app:cornerRadius="20dp"
++                            android:text="Cancel Alarm"
++                            android:textSize="12dp"
++                            android:layout_margin="10dp"
++                            app:icon="@drawable/ic_baseline_alarm_off_24"
++                            app:iconSize="20dp"
++                            android:backgroundTint="@color/white"
++                            android:textColor="@color/teal_200"
++                            app:iconTint="@color/teal_200"/>
++                    </LinearLayout>
++                </LinearLayout>
++            </com.google.android.material.card.MaterialCardView>
++        </androidx.core.widget.NestedScrollView>
++    </LinearLayout>
+ 
+ </androidx.constraintlayout.widget.ConstraintLayout>
+\ No newline at end of file
+Index: app/src/main/res/values/colors.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<resources>\r\n    <color name=\"purple_200\">#FFBB86FC</color>\r\n    <color name=\"purple_500\">#FF6200EE</color>\r\n    <color name=\"purple_700\">#FF3700B3</color>\r\n    <color name=\"teal_200\">#FF03DAC5</color>\r\n    <color name=\"teal_700\">#FF018786</color>\r\n    <color name=\"black\">#FF000000</color>\r\n    <color name=\"white\">#FFFFFFFF</color>\r\n</resources>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/values/colors.xml b/app/src/main/res/values/colors.xml
+--- a/app/src/main/res/values/colors.xml	(revision fdbe598496fc97d5e29e898b66ac6fd5547c1269)
++++ b/app/src/main/res/values/colors.xml	(date 1665993081753)
+@@ -7,4 +7,6 @@
+     <color name="teal_700">#FF018786</color>
+     <color name="black">#FF000000</color>
+     <color name="white">#FFFFFFFF</color>
++    <color name="light_teal">#A3039DDA</color>
++    <color name="pink">#4FE91E63</color>
+ </resources>
+\ No newline at end of file
+Index: app/src/main/res/drawable/ic_baseline_alarm_off_24.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/drawable/ic_baseline_alarm_off_24.xml b/app/src/main/res/drawable/ic_baseline_alarm_off_24.xml
+new file mode 100644
+--- /dev/null	(date 1665936774000)
++++ b/app/src/main/res/drawable/ic_baseline_alarm_off_24.xml	(date 1665936774000)
+@@ -0,0 +1,5 @@
++<vector android:height="24dp" android:tint="#000000"
++    android:viewportHeight="24" android:viewportWidth="24"
++    android:width="24dp" xmlns:android="http://schemas.android.com/apk/res/android">
++    <path android:fillColor="@android:color/white" android:pathData="M12,6c3.87,0 7,3.13 7,7 0,0.84 -0.16,1.65 -0.43,2.4l1.52,1.52c0.58,-1.19 0.91,-2.51 0.91,-3.92 0,-4.97 -4.03,-9 -9,-9 -1.41,0 -2.73,0.33 -3.92,0.91L9.6,6.43C10.35,6.16 11.16,6 12,6zM22,5.72l-4.6,-3.86 -1.29,1.53 4.6,3.86L22,5.72zM2.92,2.29L1.65,3.57 2.98,4.9l-1.11,0.93 1.42,1.42 1.11,-0.94 0.8,0.8C3.83,8.69 3,10.75 3,13c0,4.97 4.02,9 9,9 2.25,0 4.31,-0.83 5.89,-2.2l2.2,2.2 1.27,-1.27L3.89,3.27l-0.97,-0.98zM16.47,18.39C15.26,19.39 13.7,20 12,20c-3.87,0 -7,-3.13 -7,-7 0,-1.7 0.61,-3.26 1.61,-4.47l9.86,9.86zM8.02,3.28L6.6,1.86l-0.86,0.71 1.42,1.42 0.86,-0.71z"/>
++</vector>
+Index: app/src/main/res/drawable/alarm_image_list.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/drawable/alarm_image_list.xml b/app/src/main/res/drawable/alarm_image_list.xml
+new file mode 100644
+--- /dev/null	(date 1665936774000)
++++ b/app/src/main/res/drawable/alarm_image_list.xml	(date 1665936774000)
+@@ -0,0 +1,13 @@
++<?xml version="1.0" encoding="utf-8"?>
++<animation-list xmlns:android="http://schemas.android.com/apk/res/android">
++    <item android:drawable="@drawable/alarm1" android:duration="100"/>
++    <item android:drawable="@drawable/alarm2" android:duration="100"/>
++    <item android:drawable="@drawable/alarm3" android:duration="100"/>
++    <item android:drawable="@drawable/alarm4" android:duration="100"/>
++    <item android:drawable="@drawable/alarm5" android:duration="100"/>
++    <item android:drawable="@drawable/alarm6" android:duration="100"/>
++    <item android:drawable="@drawable/alarm7" android:duration="100"/>
++    <item android:drawable="@drawable/alarm8" android:duration="100"/>
++    <item android:drawable="@drawable/alarm9" android:duration="100"/>
++    <item android:drawable="@drawable/alarm10" android:duration="100"/>
++</animation-list>
+\ No newline at end of file
+Index: app/src/main/res/drawable/ic_heart_25.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/drawable/ic_heart_25.xml b/app/src/main/res/drawable/ic_heart_25.xml
+new file mode 100644
+--- /dev/null	(date 1665936774000)
++++ b/app/src/main/res/drawable/ic_heart_25.xml	(date 1665936774000)
+@@ -0,0 +1,10 @@
++<vector xmlns:android="http://schemas.android.com/apk/res/android"
++    android:width="120dp"
++    android:height="120dp"
++    android:viewportWidth="120"
++    android:viewportHeight="120">
++  <path
++      android:pathData="M37,28.3c-5,1.6 -10.4,7.5 -12,13.2 -3,10.9 2,20.7 19.3,37.7 15.1,14.8 14.9,14.7 19,11.5 7,-5.5 23.9,-22.9 27.2,-28.2 4.8,-7.4 6.3,-14.6 4.5,-21 -2.4,-8.4 -10.7,-14.5 -19.6,-14.5 -3.2,-0 -10.9,3.3 -13.6,5.7 -1.7,1.5 -1.9,1.5 -3.6,-0 -3,-2.7 -10.5,-5.7 -14.2,-5.6 -1.9,0.1 -5.1,0.6 -7,1.2zM49.6,36c2.3,1.2 5,3.2 5.8,4.5 1.1,1.7 2.6,2.5 4.6,2.5 2,-0 3.5,-0.8 4.6,-2.5 2.4,-3.6 9.6,-6.8 13.6,-6 5,1.1 7.5,3.2 9.3,7.7 2.7,6.8 -0.1,14.4 -8.8,23.5l-5,5.3 -13.7,-0 -13.7,-0 -5,-5.3c-8.7,-9.1 -11.5,-16.7 -8.8,-23.5 2.1,-5.1 5.7,-7.6 11.4,-8.1 0.8,-0 3.4,0.8 5.7,1.9z"
++      android:fillColor="#000000"
++      android:strokeColor="#00000000"/>
++</vector>
+Index: app/src/main/res/drawable/ic_heart_0.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/drawable/ic_heart_0.xml b/app/src/main/res/drawable/ic_heart_0.xml
+new file mode 100644
+--- /dev/null	(date 1665936774000)
++++ b/app/src/main/res/drawable/ic_heart_0.xml	(date 1665936774000)
+@@ -0,0 +1,10 @@
++<vector xmlns:android="http://schemas.android.com/apk/res/android"
++    android:width="120dp"
++    android:height="120dp"
++    android:viewportWidth="120"
++    android:viewportHeight="120">
++  <path
++      android:pathData="M37,27.3c-5,1.6 -10.4,7.5 -12,13.2 -3,10.9 2,20.7 19.3,37.7 15.1,14.8 14.9,14.7 19,11.5 7,-5.5 23.9,-22.9 27.2,-28.2 4.8,-7.4 6.3,-14.6 4.5,-21 -2.4,-8.4 -10.7,-14.5 -19.6,-14.5 -3.2,-0 -10.9,3.3 -13.6,5.7 -1.7,1.5 -1.9,1.5 -3.6,-0 -3,-2.7 -10.5,-5.7 -14.2,-5.6 -1.9,0.1 -5.1,0.6 -7,1.2zM49.6,35c2.3,1.2 5,3.2 5.8,4.5 1.1,1.7 2.6,2.5 4.6,2.5 2,-0 3.5,-0.8 4.6,-2.5 2.4,-3.6 9.6,-6.8 13.6,-6 5,1.1 7.5,3.2 9.3,7.7 1.8,4.6 1.4,8.1 -1.7,14.3 -2.5,4.8 -23.5,26.5 -25.8,26.5 -2.3,-0 -23.3,-21.7 -25.8,-26.5 -3.1,-6.2 -3.5,-9.7 -1.7,-14.3 2.1,-5.1 5.7,-7.6 11.4,-8.1 0.8,-0 3.4,0.8 5.7,1.9z"
++      android:fillColor="#000000"
++      android:strokeColor="#00000000"/>
++</vector>
+Index: app/src/main/res/drawable/ic_baseline_add_alarm_24.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/drawable/ic_baseline_add_alarm_24.xml b/app/src/main/res/drawable/ic_baseline_add_alarm_24.xml
+new file mode 100644
+--- /dev/null	(date 1665936774000)
++++ b/app/src/main/res/drawable/ic_baseline_add_alarm_24.xml	(date 1665936774000)
+@@ -0,0 +1,5 @@
++<vector android:height="24dp" android:tint="#000000"
++    android:viewportHeight="24" android:viewportWidth="24"
++    android:width="24dp" xmlns:android="http://schemas.android.com/apk/res/android">
++    <path android:fillColor="@android:color/white" android:pathData="M7.88,3.39L6.6,1.86 2,5.71l1.29,1.53 4.59,-3.85zM22,5.72l-4.6,-3.86 -1.29,1.53 4.6,3.86L22,5.72zM12,4c-4.97,0 -9,4.03 -9,9s4.02,9 9,9c4.97,0 9,-4.03 9,-9s-4.03,-9 -9,-9zM12,20c-3.87,0 -7,-3.13 -7,-7s3.13,-7 7,-7 7,3.13 7,7 -3.13,7 -7,7zM13,9h-2v3L8,12v2h3v3h2v-3h3v-2h-3L13,9z"/>
++</vector>
+Index: app/src/main/res/layout/activity_splash.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/activity_splash.xml b/app/src/main/res/layout/activity_splash.xml
+new file mode 100644
+--- /dev/null	(date 1665993081800)
++++ b/app/src/main/res/layout/activity_splash.xml	(date 1665993081800)
+@@ -0,0 +1,15 @@
++<?xml version="1.0" encoding="utf-8"?>
++<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:app="http://schemas.android.com/apk/res-auto"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    tools:context=".SplashActivity"
++    android:background="@drawable/rectangle_gradient">
++    <ImageView
++        android:id="@+id/img"
++        android:layout_width="wrap_content"
++        android:layout_height="120dp"
++        android:layout_gravity="center"/>
++
++</FrameLayout>
+\ No newline at end of file
+Index: app/src/main/res/anim/scale_centre_in.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/anim/scale_centre_in.xml b/app/src/main/res/anim/scale_centre_in.xml
+new file mode 100644
+--- /dev/null	(date 1665936774000)
++++ b/app/src/main/res/anim/scale_centre_in.xml	(date 1665936774000)
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="utf-8"?>
++<set xmlns:android="http://schemas.android.com/apk/res/android">
++<alpha android:fromAlpha="0.0"
++    android:toAlpha="1.0"
++    android:duration="1000"/>
++</set>
+\ No newline at end of file
+Index: app/src/main/res/anim/scale_centre_out.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/anim/scale_centre_out.xml b/app/src/main/res/anim/scale_centre_out.xml
+new file mode 100644
+--- /dev/null	(date 1665936774000)
++++ b/app/src/main/res/anim/scale_centre_out.xml	(date 1665936774000)
+@@ -0,0 +1,17 @@
++<?xml version="1.0" encoding="utf-8"?>
++<set xmlns:android="http://schemas.android.com/apk/res/android">
++<scale android:fromXScale="1.0"
++    android:fromYScale="1.0"
++    android:pivotX="50%"
++    android:pivotY="50%"
++    android:toXScale="2.0"
++    android:toYScale="2.0"
++    android:duration="500" />
++
++    <alpha
++        android:startOffset="500"
++        android:fromAlpha="1.0"
++        android:toAlpha="0.0"
++        android:duration="500"
++        />
++</set>
+\ No newline at end of file
+Index: app/src/main/java/com/example/madpractical8_20012011136/SplashActivity.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/madpractical8_20012011136/SplashActivity.kt b/app/src/main/java/com/example/madpractical8_20012011136/SplashActivity.kt
+new file mode 100644
+--- /dev/null	(date 1665993081675)
++++ b/app/src/main/java/com/example/madpractical8_20012011136/SplashActivity.kt	(date 1665993081675)
+@@ -0,0 +1,53 @@
++package com.example.madpractical8_20012011136
++
++
++import android.content.Intent
++import android.graphics.drawable.AnimationDrawable
++import androidx.appcompat.app.AppCompatActivity
++import android.os.Bundle
++import android.view.animation.Animation
++import android.view.animation.AnimationUtils
++import android.widget.ImageView
++
++class SplashActivity : AppCompatActivity(), Animation.AnimationListener {
++    lateinit var guni_image: ImageView
++    lateinit var logo_framebyframeanimation: AnimationDrawable
++    lateinit var twinanimation: Animation
++    override fun onCreate(savedInstanceState: Bundle?) {
++        super.onCreate(savedInstanceState)
++        setContentView(R.layout.activity_splash)
++
++        guni_image=findViewById(R.id.img)
++        guni_image.setBackgroundResource(R.drawable.uvpce_logo_list)
++        logo_framebyframeanimation=guni_image.background as AnimationDrawable
++        twinanimation = AnimationUtils.loadAnimation(this,R.anim.twin_animation)
++        twinanimation.setAnimationListener(this)
++    }
++
++    override fun onWindowFocusChanged(hasFocus: Boolean) {
++        super.onWindowFocusChanged(hasFocus)
++        if (hasFocus)
++        {
++            logo_framebyframeanimation.start()
++            guni_image.startAnimation(twinanimation)
++        }
++        else
++        {
++            logo_framebyframeanimation.stop()
++        }
++    }
++
++    override fun onAnimationStart(p0: Animation?) {
++
++    }
++
++    override fun onAnimationEnd(p0: Animation?) {
++        Intent(this, MainActivity::class.java).also { startActivity(it) }
++        overridePendingTransition(R.anim.scale_centre_in,R.anim.scale_centre_out)
++        finish()
++    }
++
++    override fun onAnimationRepeat(p0: Animation?) {
++
++    }
++}
+\ No newline at end of file
+Index: app/src/main/java/com/example/madpractical8_20012011136/MainActivity.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.madpractical8_20012011136\r\n\r\nimport androidx.appcompat.app.AppCompatActivity\r\nimport android.os.Bundle\r\n\r\nclass MainActivity : AppCompatActivity() {\r\n    override fun onCreate(savedInstanceState: Bundle?) {\r\n        super.onCreate(savedInstanceState)\r\n        setContentView(R.layout.activity_main)\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/madpractical8_20012011136/MainActivity.kt b/app/src/main/java/com/example/madpractical8_20012011136/MainActivity.kt
+--- a/app/src/main/java/com/example/madpractical8_20012011136/MainActivity.kt	(revision fdbe598496fc97d5e29e898b66ac6fd5547c1269)
++++ b/app/src/main/java/com/example/madpractical8_20012011136/MainActivity.kt	(date 1665993081534)
+@@ -1,11 +1,57 @@
+ package com.example.madpractical8_20012011136
+ 
++
++import android.graphics.drawable.AnimationDrawable
+ import androidx.appcompat.app.AppCompatActivity
+ import android.os.Bundle
++import android.view.animation.Animation
++import android.view.animation.AnimationUtils
++import android.widget.ImageView
+ 
+-class MainActivity : AppCompatActivity() {
++class MainActivity : AppCompatActivity(), Animation.AnimationListener {
++    lateinit var alarmimages : ImageView
++    lateinit var alarmimages_frameByFrameAnimation : AnimationDrawable
++    lateinit var alarmimagesAnimation : Animation
++    lateinit var heartimages : ImageView
++    lateinit var heart_frameByFrameAnimation : AnimationDrawable
++    lateinit var heartAnimation : Animation
+     override fun onCreate(savedInstanceState: Bundle?) {
+         super.onCreate(savedInstanceState)
+         setContentView(R.layout.activity_main)
++
++        alarmimages = findViewById(R.id.alarmImages)
++        alarmimages.setBackgroundResource(R.drawable.alarm_image_list)
++
++        heartimages = findViewById(R.id.heartImages)
++        heartimages.setBackgroundResource(R.drawable.heart_image_list)
++
++        alarmimages_frameByFrameAnimation = alarmimages.background as AnimationDrawable
++
++        heart_frameByFrameAnimation = heartimages.background as AnimationDrawable
++
++        alarmimagesAnimation = AnimationUtils.loadAnimation(this, R.anim.alarm_animation)
++        alarmimagesAnimation.setAnimationListener(this)
++
++        heartAnimation = AnimationUtils.loadAnimation(this, R.anim.heart_animation)
++        alarmimagesAnimation.setAnimationListener(this)
++    }
++    override fun onWindowFocusChanged(hasFocus: Boolean) {
++        super.onWindowFocusChanged(hasFocus)
++
++        if(hasFocus){
++            alarmimages_frameByFrameAnimation.start()
++            alarmimages.startAnimation(alarmimagesAnimation)
++
++            heart_frameByFrameAnimation.start()
++            heartimages.startAnimation(heartAnimation)
++        }
++    }
++    override fun onAnimationStart(p0: Animation?) {
++    }
++
++    override fun onAnimationEnd(p0: Animation?) {
++    }
++
++    override fun onAnimationRepeat(p0: Animation?) {
+     }
+ }
+\ No newline at end of file
+Index: app/src/main/res/drawable/heart_image_list.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/drawable/heart_image_list.xml b/app/src/main/res/drawable/heart_image_list.xml
+new file mode 100644
+--- /dev/null	(date 1665936774000)
++++ b/app/src/main/res/drawable/heart_image_list.xml	(date 1665936774000)
+@@ -0,0 +1,8 @@
++<?xml version="1.0" encoding="utf-8"?>
++<animation-list xmlns:android="http://schemas.android.com/apk/res/android">
++    <item android:drawable="@drawable/ic_heart_0" android:duration="270"/>
++    <item android:drawable="@drawable/ic_heart_25" android:duration="270"/>
++    <item android:drawable="@drawable/ic_heart_50" android:duration="270"/>
++    <item android:drawable="@drawable/ic_heart_75" android:duration="270"/>
++    <item android:drawable="@drawable/ic_heart_100" android:duration="270"/>
++</animation-list>
+\ No newline at end of file
+Index: app/src/main/res/anim/alarm_animation.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/anim/alarm_animation.xml b/app/src/main/res/anim/alarm_animation.xml
+new file mode 100644
+--- /dev/null	(date 1665936774000)
++++ b/app/src/main/res/anim/alarm_animation.xml	(date 1665936774000)
+@@ -0,0 +1,11 @@
++<?xml version="1.0" encoding="utf-8"?>
++<set xmlns:android="http://schemas.android.com/apk/res/android">
++    <translate
++        android:fromXDelta="0.0"
++        android:fromYDelta="0.0"
++        android:duration="750"/>
++    <translate
++        android:fromXDelta="0.0"
++        android:fromYDelta="0.0"
++        android:duration="750"/>
++</set>
+\ No newline at end of file
+Index: app/src/main/res/drawable/rectangle_gradient.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/drawable/rectangle_gradient.xml b/app/src/main/res/drawable/rectangle_gradient.xml
+new file mode 100644
+--- /dev/null	(date 1665936774000)
++++ b/app/src/main/res/drawable/rectangle_gradient.xml	(date 1665936774000)
+@@ -0,0 +1,12 @@
++<?xml version="1.0" encoding="utf-8"?>
++<shape xmlns:android="http://schemas.android.com/apk/res/android"
++    android:shape="rectangle">
++    <gradient
++        android:centerX="0.9"
++        android:centerY="0.9"
++        android:gradientRadius="1500"
++        android:startColor="@color/pink"
++        android:endColor="@color/light_teal"
++        android:type="radial"/>
++
++</shape>
+\ No newline at end of file
+Index: app/src/main/res/anim/heart_animation.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/anim/heart_animation.xml b/app/src/main/res/anim/heart_animation.xml
+new file mode 100644
+--- /dev/null	(date 1665936774000)
++++ b/app/src/main/res/anim/heart_animation.xml	(date 1665936774000)
+@@ -0,0 +1,11 @@
++<?xml version="1.0" encoding="utf-8"?>
++<set xmlns:android="http://schemas.android.com/apk/res/android">
++    <translate
++        android:fromXDelta="0.0"
++        android:fromYDelta="0.0"
++        android:duration="750"/>
++    <translate
++        android:fromXDelta="0.0"
++        android:fromYDelta="0.0"
++        android:duration="750"/>
++</set>
+\ No newline at end of file
+Index: app/src/main/res/anim/twin_animation.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/anim/twin_animation.xml b/app/src/main/res/anim/twin_animation.xml
+new file mode 100644
+--- /dev/null	(date 1665936774000)
++++ b/app/src/main/res/anim/twin_animation.xml	(date 1665936774000)
+@@ -0,0 +1,40 @@
++<?xml version="1.0" encoding="utf-8"?>
++<set xmlns:android="http://schemas.android.com/apk/res/android"
++    android:startOffset="800">
++    <translate
++        android:fromXDelta="1.0"
++        android:fromYDelta="1.0"
++        android:toXDelta="10.0"
++        android:toYDelta="100.0"
++        android:duration="750"/>
++    <rotate
++        android:fromDegrees="0"
++        android:toDegrees="360"
++        android:pivotX="50%"
++        android:pivotY="50%"
++        android:duration="1500"/>
++    <scale
++        android:fromXScale="1.0"
++        android:fromYScale="1.0"
++        android:toXScale="2.0"
++        android:toYScale="2.0"
++        android:pivotX="50%"
++        android:pivotY="50%"
++        android:duration="750"/>
++
++    <scale
++        android:startOffset="750"
++        android:fromXScale="1.0"
++        android:fromYScale="1.0"
++        android:toXScale="0.5"
++        android:toYScale="0.5"
++        android:pivotX="50%"
++        android:pivotY="50%"
++        android:duration="750"/>
++    <translate
++        android:fromXDelta="1.0"
++        android:fromYDelta="1.0"
++        android:toXDelta="-10.0"
++        android:toYDelta="-100.0"
++        android:duration="750"/>
++</set>
+\ No newline at end of file
+Index: app/src/main/res/drawable/uvpce_logo_list.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/drawable/uvpce_logo_list.xml b/app/src/main/res/drawable/uvpce_logo_list.xml
+new file mode 100644
+--- /dev/null	(date 1665936774000)
++++ b/app/src/main/res/drawable/uvpce_logo_list.xml	(date 1665936774000)
+@@ -0,0 +1,13 @@
++<?xml version="1.0" encoding="utf-8"?>
++<animation-list xmlns:android="http://schemas.android.com/apk/res/android"
++    android:oneshot="true">
++    <item android:drawable="@drawable/uvpce_logo_1" android:duration="100"/>
++    <item android:drawable="@drawable/uvpce_logo_2" android:duration="100"/>
++    <item android:drawable="@drawable/uvpce_logo_3" android:duration="100"/>
++    <item android:drawable="@drawable/uvpce_logo_4" android:duration="100"/>
++    <item android:drawable="@drawable/uvpce_logo_5" android:duration="100"/>
++    <item android:drawable="@drawable/uvpce_logo_6" android:duration="100"/>
++    <item android:drawable="@drawable/uvpce_logo_7" android:duration="100"/>
++    <item android:drawable="@drawable/uvpce_logo" android:duration="100"/>
++
++</animation-list>
+\ No newline at end of file
+Index: app/src/main/res/drawable/ic_heart_75.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/drawable/ic_heart_75.xml b/app/src/main/res/drawable/ic_heart_75.xml
+new file mode 100644
+--- /dev/null	(date 1665936774000)
++++ b/app/src/main/res/drawable/ic_heart_75.xml	(date 1665936774000)
+@@ -0,0 +1,10 @@
++<vector xmlns:android="http://schemas.android.com/apk/res/android"
++    android:width="120dp"
++    android:height="120dp"
++    android:viewportWidth="120"
++    android:viewportHeight="120">
++  <path
++      android:pathData="M37,28.3c-5,1.6 -10.4,7.5 -12,13.2 -3,10.9 2,20.7 19.3,37.7 15.1,14.8 14.9,14.7 19,11.5 7,-5.5 23.9,-22.9 27.2,-28.2 4.8,-7.4 6.3,-14.6 4.5,-21 -2.4,-8.4 -10.7,-14.5 -19.6,-14.5 -3.2,-0 -10.9,3.3 -13.6,5.7 -1.7,1.5 -1.9,1.5 -3.6,-0 -3,-2.7 -10.5,-5.7 -14.2,-5.6 -1.9,0.1 -5.1,0.6 -7,1.2zM49.6,36c2.3,1.2 5,3.2 5.8,4.5 1.1,1.7 2.6,2.5 4.6,2.5 2,-0 3.5,-0.8 4.6,-2.5 0.8,-1.3 3.5,-3.3 5.9,-4.5 7.2,-3.5 13.9,-1.1 16.9,6.1l1.5,3.6 -10.7,0.5c-5.9,0.3 -18.8,0.5 -28.7,0.4 -19.5,-0.2 -18.7,0.1 -16.4,-5.8 1.5,-3.7 5.6,-6.3 10.8,-6.7 0.8,-0 3.4,0.8 5.7,1.9z"
++      android:fillColor="#000000"
++      android:strokeColor="#00000000"/>
++</vector>
+Index: app/src/main/AndroidManifest.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<manifest xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\">\r\n\r\n    <application\r\n        android:allowBackup=\"true\"\r\n        android:dataExtractionRules=\"@xml/data_extraction_rules\"\r\n        android:fullBackupContent=\"@xml/backup_rules\"\r\n        android:icon=\"@mipmap/ic_launcher\"\r\n        android:label=\"@string/app_name\"\r\n        android:roundIcon=\"@mipmap/ic_launcher_round\"\r\n        android:supportsRtl=\"true\"\r\n        android:theme=\"@style/Theme.MADpractical8_20012011136\"\r\n        tools:targetApi=\"31\">\r\n        <activity\r\n            android:name=\".MainActivity\"\r\n            android:exported=\"true\">\r\n            <intent-filter>\r\n                <action android:name=\"android.intent.action.MAIN\" />\r\n\r\n                <category android:name=\"android.intent.category.LAUNCHER\" />\r\n            </intent-filter>\r\n\r\n            <meta-data\r\n                android:name=\"android.app.lib_name\"\r\n                android:value=\"\" />\r\n        </activity>\r\n    </application>\r\n\r\n</manifest>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/AndroidManifest.xml b/app/src/main/AndroidManifest.xml
+--- a/app/src/main/AndroidManifest.xml	(revision fdbe598496fc97d5e29e898b66ac6fd5547c1269)
++++ b/app/src/main/AndroidManifest.xml	(date 1665993081550)
+@@ -13,14 +13,20 @@
+         android:theme="@style/Theme.MADpractical8_20012011136"
+         tools:targetApi="31">
+         <activity
+-            android:name=".MainActivity"
++            android:name=".SplashActivity"
+             android:exported="true">
+             <intent-filter>
+                 <action android:name="android.intent.action.MAIN" />
+ 
+                 <category android:name="android.intent.category.LAUNCHER" />
+             </intent-filter>
+-
++            <meta-data
++                android:name="android.app.lib_name"
++                android:value="" />
++        </activity>
++        <activity
++            android:name=".MainActivity"
++            android:exported="false">
+             <meta-data
+                 android:name="android.app.lib_name"
+                 android:value="" />
+Index: app/src/main/res/drawable/ic_heart_100.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/drawable/ic_heart_100.xml b/app/src/main/res/drawable/ic_heart_100.xml
+new file mode 100644
+--- /dev/null	(date 1665936774000)
++++ b/app/src/main/res/drawable/ic_heart_100.xml	(date 1665936774000)
+@@ -0,0 +1,10 @@
++<vector xmlns:android="http://schemas.android.com/apk/res/android"
++    android:width="120dp"
++    android:height="120dp"
++    android:viewportWidth="120"
++    android:viewportHeight="120">
++  <path
++      android:pathData="M37,27.3c-5,1.6 -10.4,7.5 -12,13.2 -1.8,6.4 -0.3,13.6 4.5,21 3.3,5.3 20.2,22.7 27.2,28.2 4.1,3.2 3.9,3.3 19,-11.5 17.3,-17 22.3,-26.8 19.3,-37.7 -2.4,-8.4 -10.7,-14.5 -19.6,-14.5 -3.2,-0 -10.9,3.3 -13.6,5.7 -1.7,1.5 -1.9,1.5 -3.6,-0 -3,-2.7 -10.5,-5.7 -14.2,-5.6 -1.9,0.1 -5.1,0.6 -7,1.2z"
++      android:fillColor="#000000"
++      android:strokeColor="#00000000"/>
++</vector>
+Index: app/src/main/res/drawable/ic_heart_50.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/drawable/ic_heart_50.xml b/app/src/main/res/drawable/ic_heart_50.xml
+new file mode 100644
+--- /dev/null	(date 1665936774000)
++++ b/app/src/main/res/drawable/ic_heart_50.xml	(date 1665936774000)
+@@ -0,0 +1,10 @@
++<vector xmlns:android="http://schemas.android.com/apk/res/android"
++    android:width="120dp"
++    android:height="120dp"
++    android:viewportWidth="120"
++    android:viewportHeight="120">
++  <path
++      android:pathData="M37,28.3c-5,1.6 -10.4,7.5 -12,13.2 -3,10.9 2,20.7 19.3,37.7 15.1,14.8 14.9,14.7 19,11.5 7,-5.5 23.9,-22.9 27.2,-28.2 4.8,-7.4 6.3,-14.6 4.5,-21 -2.4,-8.4 -10.7,-14.5 -19.6,-14.5 -3.2,-0 -10.9,3.3 -13.6,5.7 -1.7,1.5 -1.9,1.5 -3.6,-0 -3,-2.7 -10.5,-5.7 -14.2,-5.6 -1.9,0.1 -5.1,0.6 -7,1.2zM49.6,36c2.3,1.2 5,3.2 5.8,4.5 1.1,1.7 2.6,2.5 4.6,2.5 2,-0 3.5,-0.8 4.6,-2.5 2.4,-3.6 9.6,-6.8 13.6,-6 5,1.1 7.5,3.2 9.3,7.7 1.7,4.3 1.4,8.1 -1,12.9l-1.4,2.5 -25.2,-0.3c-27.6,-0.3 -26.1,-0 -28,-6.7 -1.9,-6.8 2.2,-14.2 8.6,-15.9 3.6,-0.9 4.8,-0.7 9.1,1.3z"
++      android:fillColor="#000000"
++      android:strokeColor="#00000000"/>
++</vector>
